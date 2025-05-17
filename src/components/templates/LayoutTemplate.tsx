@@ -30,8 +30,8 @@ export const LayoutTemplate: React.FC = () => {
             className="font-semibold text-lg flex items-center gap-2"
             style={{ color: colorTextBase }}
           >
-            <GiSergeant className="text-primary" />
-            Torque Tech
+            <GiSergeant className="text-primary-base" />
+            Só Sorriso
           </span>
         </div>
 

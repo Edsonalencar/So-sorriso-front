@@ -43,7 +43,7 @@ export const LoginForm = () => {
       });
 
       if (values.remember) {
-        let encryptPass = CryptoJS.AES.encrypt(
+        const encryptPass = CryptoJS.AES.encrypt(
           values.password,
           secret
         ).toString();
@@ -71,48 +71,54 @@ export const LoginForm = () => {
 
   return (
     <Form
-      className="mt-10 w-full"
+      className="w-full flex flex-col gap-[18px]"
       name="login"
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       layout="vertical"
     >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: "Nenhum campo pode ficar vazio" }]}
-        label="E-mail"
-        layout="vertical"
-      >
-        <Input
-          className="rounded-md"
-          size="large"
-          id="email"
-          type="email"
-          placeholder="Digite seu e-mail"
-          prefix={<UserOutlined />}
-        />
-      </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: "Nenhum campo pode ficar vazio" }]}
-        label="Senha"
-        layout="vertical"
-      >
-        <Input.Password
-          className="rounded-md"
-          id="password"
-          type="password"
-          placeholder="Digite sua senha"
-          size="large"
-          prefix={<LockOutlined />}
-        />
-      </Form.Item>
+      <div className="flex flex-col gap-[16px]">
+        <Form.Item
+          name="username"
+          rules={[{ required: true, message: "Nenhum campo pode ficar vazio" }]}
+          label="E-mail"
+          layout="vertical"
+          className="m-0"
+        >
+          <Input
+            className="rounded-md"
+            size="large"
+            id="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+            prefix={<UserOutlined />}
+          />
+        </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[{ required: true, message: "Nenhum campo pode ficar vazio" }]}
+          label="Senha"
+          layout="vertical"
+          className="m-0"
+        >
+          <Input.Password
+            className="rounded-md"
+            id="password"
+            type="password"
+            placeholder="Digite sua senha"
+            size="large"
+            prefix={<LockOutlined />}
+          />
+        </Form.Item>
+
+      </div>
+       
       <Form.Item name="remember" noStyle>
         <Checkbox id="remember">Lembrar de mim</Checkbox>
       </Form.Item>
 
-      <Form.Item className="mt-4">
+      <Form.Item className="m-0">
         <Button
           htmlType="submit"
           type="primary"

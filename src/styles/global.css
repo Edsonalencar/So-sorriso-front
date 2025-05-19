@@ -1,1 +1,10 @@
 /* Qualquer estilo criado aqui é será usado globalmente */
+
+.ant-col.ant-form-item-label {
+  padding: 0px !important; 
+  padding-bottom: 2px !important; 
+}
+
+a { 
+  color: #4D98FF !important;
+}

@@ -31,7 +31,7 @@ export const lightTheme: ThemeConfig = {
     },
     Typography: {
       colorText: "#0B1014",
-    },
+    }
   },
 };
 

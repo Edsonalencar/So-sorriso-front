@@ -6,7 +6,7 @@ export function isValidUUID(uuid: string): boolean {
 
 export function isValidPhone(value: string) {
   if (!value) return false;
-  var regex = /^\(\d{2}\) \d{5}-\d{4}$/;
+  const regex = /^\(\d{2}\) \d{5}-\d{4}$/;
   return regex.test(value);
 }
 
@@ -41,4 +41,14 @@ export function isBase64(str?: string) {
   } catch (err) {
     return false;
   }
+}
+
+export function isValidCPF(cpf: string) {
+  const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+  return cpfRegex.test(cpf);
+}
+ 
+export function isValidCNPJ(cnpj: string) {
+  const cnpjRegex = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
+  return cnpjRegex.test(cnpj);
 }

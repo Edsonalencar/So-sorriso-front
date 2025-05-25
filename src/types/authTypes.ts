@@ -48,3 +48,10 @@ export interface Address {
   complement?: string;
   createdAt?: Date;
 }
+ 
+export enum RegisterFormSteps {
+  AUTH,
+  PERSONAL,
+  CLINIC
+}
+ 

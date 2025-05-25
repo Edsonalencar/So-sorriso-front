@@ -21,7 +21,7 @@ export const LoginPage = () => {
 
           <Typography.Text className="self-center text-light-80">
             Ainda não possui uma conta?{' '}
-            <Link to="/signup">Cadastre-se</Link>
+            <Link to="/register">Cadastre-se</Link>
           </Typography.Text>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { PhoneNumber } from "antd-phone-input";
 import { IconType } from "react-icons";
 
 export type Map = {
@@ -108,4 +109,21 @@ export interface ResetPasswordForm {
 export interface SelectOption extends Map {
   label: string;
   value: string;
+}
+ 
+export interface AuthenticationRegisterForm {
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+}
+ 
+export interface PersonalDataRegisterForm {
+  ownerName: string
+  document: string
+  phone: PhoneNumber
+}
+ 
+export interface ClinicDataRegisterForm {
+  name: string
+  cnpj: string
 }

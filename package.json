@@ -12,7 +12,9 @@
   "dependencies": {
     "@ant-design/plots": "^2.3.2",
     "antd": "^5.22.2",
+    "antd-phone-input": "^0.3.14",
     "axios": "^1.9.0",
+    "classnames": "^2.5.1",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.13",
     "jose": "^5.9.6",

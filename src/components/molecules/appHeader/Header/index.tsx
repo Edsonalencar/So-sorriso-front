@@ -2,7 +2,6 @@ import { NotificationsHeader } from "@/components/molecules/appHeader/Notificati
 import { Flex, theme } from "antd";
 import { Header } from "antd/es/layout/layout";
 import { ConfigHeader } from "../ConfigHeader";
-import { SelectActiveGarage } from "../SelectActiveGarage";
 import { ToggleTheme } from "../ToggleTheme";
 
 export const AppHeader: React.FC = () => {
@@ -16,7 +15,6 @@ export const AppHeader: React.FC = () => {
         <NotificationsHeader />
         <ToggleTheme />
         <ConfigHeader />
-        <SelectActiveGarage />
       </Flex>
     </Header>
   );

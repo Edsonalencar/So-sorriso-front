@@ -8,7 +8,7 @@ export interface StockItem {
   quantity: number;
   item: ItemStock;
   local?: LocalStock;
-  garageId: string;
+  clinicId: string;
   acquisitionAt?: string;
   createdAt: string;
 }

@@ -1,1 +1,1 @@
-import { Auth, Profile, Role, User, UserStatus } from "./authTypes";
+import { Auth, Profile, Role, User, ActiveStatus } from "./authTypes";

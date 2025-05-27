@@ -1,5 +1,5 @@
-import { UserStatus } from "@/types/authTypes";
-import { JobsStatus, ProductType } from "@/types/entitysType";
+import { TransactionType, TransactionStatus, TransactionCategoryOut, TransactionCategoryIn } from "@/services/stockTransactionService/dto";
+import { ActiveStatus } from "@/types/authTypes";
 
 export const parserDayToPt = (day: string) => {
   switch (day) {
@@ -57,5 +57,63 @@ export const parseDay = (day: string) => {
       return "FRIDAY";
     case "Sáb":
       return "SATURDAY";
+  }
+};
+
+export const ActiveStatusSerialize = (value?: ActiveStatus) => {
+  switch (value) {
+    case ActiveStatus.ACTIVE:
+      return "Ativo";
+    case ActiveStatus.INACTIVE:
+      return "Inativo";
+    default:
+      return "Ativo";
+  }
+};
+
+export const transactionTypeSerialize = (value?: TransactionType) => {
+  switch (value) {
+    case TransactionType.INPUT:
+      return "Entrada";
+    case TransactionType.OUTPUT:
+      return "Saída";
+    default:
+      return "Tipo desconhecido";
+  }
+};
+
+export const transactionStatusSerialize = (value?: TransactionStatus) => {
+  switch (value) {
+    case TransactionStatus.CREATED:
+      return "Criado";
+    case TransactionStatus.CANCELLED:
+      return "Cancelado";
+    default:
+      return "Tipo desconhecido";
+  }
+};
+
+export const transactionCategorySerialize = (
+  value?: TransactionCategoryOut | TransactionCategoryIn
+): string => {
+  switch (value) {
+    case TransactionCategoryOut.SALE:
+      return "Venda de Itens";
+    case TransactionCategoryOut.WORK_ORDER:
+      return "Uso em Ordem de Serviço";
+    case TransactionCategoryOut.DISPOSAL:
+      return "Descarte de Itens";
+    case TransactionCategoryOut.TRANSFER:
+      return "Transferência Enviada";
+    case TransactionCategoryIn.PURCHASE:
+      return "Compra de Estoque";
+    case TransactionCategoryIn.RETURN:
+      return "Devolução ao Estoque";
+    case TransactionCategoryIn.TRANSFER:
+      return "Transferência Recebida";
+    case TransactionCategoryIn.WARRANTY_REPLACEMENT:
+      return "Substituição por Garantia";
+    default:
+      return "Desconhecido";
   }
 };

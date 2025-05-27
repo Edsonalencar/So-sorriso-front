@@ -1,4 +1,4 @@
-import { LoginForm } from "@/components/organisms/LoginForm";
+import { LoginForm } from "@/components/organisms/forms/LoginForm";
 import { theme, Typography } from "antd";
 
 export const LoginPage = () => {

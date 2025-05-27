@@ -1,14 +1,19 @@
 import { FormProps } from "antd";
 import { Col, Form, Input, Row } from "antd";
 import { Profile } from "@/types/authTypes";
-import { InputCpf } from "@/components/atoms/Inputs/InputCpf";
 import { InputPhone } from "@/components/atoms/Inputs/InputPhone";
+import { InputCpf } from "@/components/atoms/Inputs/InputCpf";
 
 interface Props extends FormProps<Profile> {
   withAuth?: boolean;
+  requiredPassword?: boolean;
 }
 
-export const UserForm = ({ withAuth = false, ...rest }: Props) => {
+export const UserForm = ({
+  withAuth = false,
+  requiredPassword = true,
+  ...rest
+}: Props) => {
   return (
     <Form layout="vertical" {...rest}>
       <Row gutter={[16, 16]}>
@@ -31,9 +36,9 @@ export const UserForm = ({ withAuth = false, ...rest }: Props) => {
         <Col span={24} md={{ span: 12 }}>
           <Form.Item
             label="Email"
-            name={"email"}
-            key={"email"}
-            id="email"
+            name={"username"}
+            key={"username"}
+            id="username"
             rules={[
               {
                 required: withAuth,
@@ -77,7 +82,7 @@ export const UserForm = ({ withAuth = false, ...rest }: Props) => {
               id="password"
               rules={[
                 {
-                  required: true,
+                  required: requiredPassword,
                   message: "Campo obrigatório!",
                 },
               ]}

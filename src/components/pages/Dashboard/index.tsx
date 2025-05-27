@@ -1,28 +1,22 @@
-import { BasePagination } from "@/components/atoms/BasePagination";
 import { LoadingContent } from "@/components/atoms/LoadingContent";
 import { Card, DatePicker, Flex, Typography } from "antd";
 import Search from "antd/es/input/Search";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import "dayjs/locale/pt-br";
 
 dayjs.locale("pt-br");
 
 export const DashboardPage = () => {
-  const [loading, setLoading] = useState<boolean>(false);
 
   const [startAt, setStartAt] = useState(dayjs().startOf("month").toDate());
   const [endAt, setEndAt] = useState(dayjs().endOf("month").toDate());
 
   const { RangePicker } = DatePicker;
-  const [page, setPage] = useState<number>(0);
-
-  const navigate = useNavigate();
 
   return (
     <>
-      <LoadingContent isLoading={loading} />
+      <LoadingContent isLoading={false} />
       <Flex gap={16} vertical>
         <RangePicker
           value={[dayjs(startAt), dayjs(endAt)]}

@@ -10,6 +10,6 @@ export interface LocalStock {
   name: string;
   description?: string;
   status: ActiveStatus;
-  garageId: string;
+  clinicId: string;
   createdAt: string;
 }

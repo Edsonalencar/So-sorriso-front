@@ -1,23 +1,28 @@
-import { Profile, User, UserStatus } from "@/types/authTypes";
+import { Profile, User, ActiveStatus } from "@/types/authTypes";
 import { formatCpfCnpj, formatPhone } from "@/utils/formaters/format";
 import { formatDate } from "@/utils/formaters/formatDate";
 import { formatDateAndTime } from "@/utils/formaters/formatTime";
 import { Descriptions } from "antd";
+import React from "react";
 
 interface UserDetail extends Profile {
   email: string;
-  status?: UserStatus;
+  status?: ActiveStatus;
   owner?: User;
 }
 
 interface Props {
+  title?: string | React.ReactNode;
   data: UserDetail;
 }
 
-export const ProfileWitchEmailDescription: React.FC<Props> = ({ data }) => {
+export const ProfileWitchEmailDescription: React.FC<Props> = ({
+  data,
+  title,
+}) => {
   return (
     <Descriptions
-      title="Apicultor"
+      title={title}
       layout="vertical"
       bordered
       column={{ xxl: 4, xl: 3, lg: 2, md: 1, sm: 1, xs: 1 }}

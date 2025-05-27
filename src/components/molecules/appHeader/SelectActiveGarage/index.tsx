@@ -1,7 +1,7 @@
 import { Button, Flex, Popover } from "antd";
 import { HiOutlineChevronUpDown } from "react-icons/hi2";
 
-export const SelectActiveGarage: React.FC = () => {
+export const SelectActiveClinic: React.FC = () => {
   return (
     <Popover
       content={

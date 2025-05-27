@@ -1,4 +1,4 @@
-import { Address, UserStatus } from "@/types/authTypes";
+import { Address, ActiveStatus } from "@/types/authTypes";
 
 export interface CreateOrUpdateUserDTO {
   name?: string;
@@ -6,7 +6,7 @@ export interface CreateOrUpdateUserDTO {
   document?: string;
   phone?: string;
   password?: string;
-  status?: UserStatus;
+  status?: ActiveStatus;
   birthDate?: string;
   address?: Address;
 }

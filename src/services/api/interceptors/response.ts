@@ -1,7 +1,6 @@
 // Interceptador de respostas
 import { AxiosResponse } from "axios";
 import { logWarning } from "../utils/logger";
-import { ResponseDTO } from "../types";
 import { handlerException } from "../handler/error";
 
 export function responseInterceptor(response: AxiosResponse): AxiosResponse {
